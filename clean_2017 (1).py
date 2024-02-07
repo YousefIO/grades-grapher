@@ -14,8 +14,10 @@ with open('2017 (1).csv', 'r') as input_file, open('2017.csv', 'w', newline='') 
 
     for row in reader:
         if all(is_number(cell) for cell in row):
+          row.pop(-1)
           row.insert(3,"0")
           row.insert(7,"0")
           row.insert(8,"0")
+          row.insert(9,"0")
 
           writer.writerow(row)
